@@ -12,7 +12,11 @@ public class Main {
 		tickets.add(new Ticket(3, "link 3"));
 		Distributor distributor = new Distributor(students, tickets);
 		for (Student s: distributor.getStudentsWithTickets()) {
-			System.out.println(s.getName() +"\t" + s.getTicket().getUrl());
+			String line = String.format("%s\tбилет N%s\t%s",
+										s.getName(), 
+										s.getTicket().getNumber(), 
+										s.getTicket().getUrl());
+			System.out.println(line);
 		}
 	}
 }
